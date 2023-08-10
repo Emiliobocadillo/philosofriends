@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+
+<ul class="chatrooms">
+  <% philosophies.forEach(philosophy => { %>
+  <li class="chatroom">
+    <img
+      src="/taoism.png"
+      alt="<%= philosophy.name %> philosophy icon"
+    />
+    <h4><%= philosophy.name %></h4>
+    <p><%= philosophy.description %></p>
+  </li>
+  <% }); %>
+</ul>
+
+<%- include('partials/footer'); -%>

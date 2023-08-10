@@ -1,0 +1,18 @@
+<%- include('partials/header'); -%>
+
+<header>
+  <img src="/logo.jpeg" alt="" />
+  <div class="headings">
+    <h2>CHAT</h2>
+    <h3>Choose a room</h3>
+    <a href="/chatrooms" class="btn">View Chatrooms</a>
+  </div>
+</header>
+
+<div class="message-container"></div>
+<form action="send-container">
+  <input type="text" id="message-input" />
+  <button type="submit" id="send-button">Send</button>
+</form>
+
+<%- include('partials/footer'); -%>
