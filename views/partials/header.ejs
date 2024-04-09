@@ -1,0 +1,47 @@
+<header class="header">
+
+    <a href="/blog" class="header__logo">PhilosoFriends</a>
+    <nav class="header__nav">
+        <ul>
+            <li>
+                <a href="/blog" class="<%= isActiveRoute("/blog", currentRoute) %>">Blog</a>
+            </li>
+              <li>
+                <a href="/chatrooms" class="<%= isActiveRoute("/chatrooms", currentRoute) %>">Chatrooms</a>
+            </li>
+            
+            <% if (!user) { %>
+                <li>
+                    <a href="/login" class="<%= isActiveRoute("/login", currentRoute) %>">Log in</a>
+                </li>
+                <li>
+                    <a href="/signup" class="<%= isActiveRoute("/signup", currentRoute) %>">Sign up</a>
+                </li>
+            <% } %>
+            
+            <% if (user) { %>
+              
+                <li>
+                    <a href="/logout" class="<%= isActiveRoute("/signup", currentRoute) %>">Log out</a>
+                </li>
+                <li>
+                    <a href="/profile" class="<%= isActiveRoute("/profile", currentRoute) %>">
+                        @<%= user.username %>
+                    </a>
+                </li>
+                <% if (user.isAdmin) { %>
+                    <li>
+                        <a href="/dashboard" class="<%= isActiveRoute("/admin", currentRoute) %>">Admin</a>
+                    </li>
+                <% } %>
+            <% } %>
+
+        </ul>
+    </nav>
+
+    <div class="header__button">
+        <button class="searchBtn" aria-expanded="false">
+            Search
+        </button>
+    </div>
+</header>

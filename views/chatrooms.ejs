@@ -1,0 +1,30 @@
+<div class="author">
+  <h1 class="author__heading">Chatrooms</h1>
+</div>
+
+<div class="join-container">
+  <header class="join-header">
+    <h1>Chatrooms</h1>
+  </header>
+  <main class="join-main">
+    <form action="/chat" method="GET">
+      <div class="form-control">
+        <label for="room">Room</label>
+        <select name="room" id="room">
+          <option value="Taoism">Taoism</option>
+          <option value="Hedonism">Hedonism</option>
+          <option value="Existentialism">Existentialism</option>
+          <option value="Asceticism">Asceticism</option>
+          <option value="Solipsism">Solipsism</option>
+          <option value="Stoicism">Stoicism</option>
+        </select>
+      </div>
+      <input
+        type="hidden"
+        name="username"
+        value="<%= user ? user.username : '' %>"
+      />
+      <button type="submit" class="btn">Join Chatroom</button>
+    </form>
+  </main>
+</div>
